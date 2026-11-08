@@ -2,7 +2,6 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BA2026 | Ayaulym Kenzhebay | E-Portfolio</title>
 <style>
-  <style>
 html, body {
   max-width: 98%;
   overflow-x: hidden;
@@ -11,7 +10,73 @@ html, body {
 iframe {
   max-width: 98%;
 }
-</style>
+  .photo-carousel {
+    position: relative;
+    max-width: 750px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.45s ease;
+}
+
+.carousel-track img {
+    min-width: 100%;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.carousel-btn.prev {
+    left: 12px;
+}
+
+.carousel-btn.next {
+    right: 12px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    padding: 15px;
+}
+
+.carousel-dots button {
+    width: 9px;
+    height: 9px;
+    border: none;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.carousel-dots button.active {
+    background: #245c46;
+}
 :root{--bg:#f5f3ef;--paper:#fffefa;--ink:#202321;--muted:#68716b;--line:#e4e2dc;--gold:#a97845;--green:#263f38;--soft:#eee8df}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,sans-serif}
 .wrap{max-width:1120px;margin:auto;padding:0 22px}header{padding:18px 0;border-bottom:1px solid var(--line);background:#f5f3eff2}
@@ -342,4 +407,47 @@ footer{padding:30px 0 45px;border-top:1px solid var(--line);color:var(--muted);f
 
 <section id="reflection"><div class="kicker">06 · Professional development</div><h2>Reflection & next steps</h2><div class="card"><h3>What changed in my thinking?</h3><p>Reflect on how your judgment developed, which capabilities you strengthened and what you want to improve next.</p><div class="placeholder">Add a 100–150 word reflection and 2–3 professional development goals.</div></div></section>
 </main><footer><div class="wrap"><b>Ayaulym Kenzhebay</b> · DPA-2602 · Astana IT University<br>Business Administration · 2026–2027<br><br>Replace each placeholder with your own assessed artifacts and verified sources. Keep a dated archive of the submitted version.</div></footer>
+<script>
+document.querySelectorAll('.photo-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const images = track.querySelectorAll('img');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+
+    let currentIndex = 0;
+
+    images.forEach((_, index) => {
+        const dot = document.createElement('button');
+
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('button');
+
+    function updateCarousel() {
+        track.style.transform =
+            `translateX(-${currentIndex * 100}%)`;
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    carousel.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+    });
+
+    carousel.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel();
+    });
+
+    updateCarousel();
+});
+</script>
 </body></html>
