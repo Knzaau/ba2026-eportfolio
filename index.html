@@ -2,6 +2,16 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BA2026 | Ayaulym Kenzhebay | E-Portfolio</title>
 <style>
+  <style>
+html, body {
+  max-width: 98%;
+  overflow-x: hidden;
+}
+
+iframe {
+  max-width: 98%;
+}
+</style>
 :root{--bg:#f5f3ef;--paper:#fffefa;--ink:#202321;--muted:#68716b;--line:#e4e2dc;--gold:#a97845;--green:#263f38;--soft:#eee8df}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,sans-serif}
 .wrap{max-width:1120px;margin:auto;padding:0 22px}header{padding:18px 0;border-bottom:1px solid var(--line);background:#f5f3eff2}
@@ -23,16 +33,7 @@ ul{padding-left:18px;color:var(--muted);font-size:14px}li{margin:6px 0}
 footer{padding:30px 0 45px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding:48px 0}.grid,.grid3{grid-template-columns:1fr}.head{display:block}section{padding:38px 0}nav a{padding:6px 7px;font-size:11px}}
 </style></head><body>
-  <style>
-html, body {
-  max-width: 98%;
-  overflow-x: hidden;
-}
-
-iframe {
-  max-width: 98%;
-}
-</style>
+  
 <header>
   <div class="wrap nav">
     <div class="brand">BA2026 · E-PORTFOLIO</div>
@@ -105,11 +106,20 @@ iframe {
       </p>
     </div>
 
-    <div class="card">
-      <img src="assets/images/aktown.jpg"
-           alt="Aktown youth centre"
-           width="100%"
-           loading="lazy">
+      <div class="photo-carousel">
+    <button class="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
+
+    <div class="carousel-track">
+        <img src="assets/images/photo_2026-08-10_23-25-39.jpg">
+        <img src="assets/images/IMG_6730.JPG">
+        <img src="assets/images/photo_2026-08-10_23-25-40.jpg">
+        <img src="assets/images/IMG_5457.JPG">
+    </div>
+
+    <button class="carousel-btn next" aria-label="Next photo">&#10095;</button>
+
+    <div class="carousel-dots"></div>
+</div>
       <h3>Media & Aktown</h3>
       <p>
         I worked at Aktown Youth Centre for a year, creating stories,
@@ -296,7 +306,7 @@ iframe {
   style="border:0;">
 </iframe></article>
 <article class="card assignment"><span class="tag">A2 · Video Essay</span><h3>Human–AI operating model</h3><p>Video, script, matrix and process map. What changed in your allocation? Which process/KPI survived later evidence?</p><video controls>
-  <source src="assets/videos/Kenzhebay_DPA2602_BA2026_A2_Video.mp4" type="video/mp4">
+  <source src="assets/videos/Kenzhebay_DPA2602_BA2026_A2_Video_compross.mp4" type="video/mp4">
 </video> <a href="assets/documents/KENZHEBAY_DPA2602_BA2026_A2_Script.pdf" target="_blank">
   Open script
 </a></article>
