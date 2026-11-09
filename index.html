@@ -18,65 +18,6 @@ iframe {
     border-radius: 14px;
 }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.45s ease;
-}
-
-.carousel-track img {
-    min-width: 50%;
-    width: 50%;
-    height: 210px;
-    object-fit: cover;
-    display: block;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    border: none;
-    border-radius: 50%;
-    width: 21px;
-    height: 21px;
-    background: rgba(0,0,0,0.55);
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.carousel-btn:hover {
-    background: rgba(0,0,0,0.8);
-}
-
-.carousel-btn.prev {
-    left: 12px;
-}
-
-.carousel-btn.next {
-    right: 12px;
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 9px;
-    padding: 15px;
-}
-
-.carousel-dots button {
-    width: 9px;
-    height: 9px;
-    border: none;
-    border-radius: 50%;
-    background: #ccc;
-    cursor: pointer;
-}
-
-.carousel-dots button.active {
-    background: #245c46;
-}
   
 /* COMPANIES SECTION */
 
@@ -1037,7 +978,10 @@ footer{padding:30px 0 45px;border-top:1px solid var(--line);color:var(--muted);f
   height="500"
   style="border:0;">
 </iframe></article>
-<article class="card"><h3>Video Presentation</h3><p>10–15 minute presentation aligned with the deck and report.</p><div class="placeholder">Add final video link.</div></article></div>
+<article class="card"><h3>Video Presentation</h3><p>10–15 minute presentation aligned with the deck and report.</p><video controls width="100%">
+    <source src="assets/videos/Video_final.mp4" type="video/mp4">
+    
+</video></article></div>
 <div class="callout"><b>Roadmap check:</b> Every initiative needs an action, role owner, KPI baseline and target, dependency, cost/resource basis, risk/control and decision gate.</div></section>
 
 <section id="evidence"><div class="head"><div><div class="kicker">05 · Research integrity</div><h2>Evidence, verification & responsible AI</h2></div><p class="sub">Make the evidence trail auditable. Every important claim should be traceable to a source and a verification step.</p></div>
@@ -1056,7 +1000,15 @@ footer{padding:30px 0 45px;border-top:1px solid var(--line);color:var(--muted);f
   style="border:0;">
 </iframe></article></div></section>
 
-<section id="reflection"><div class="kicker">06 · Professional development</div><h2>Reflection & next steps</h2><div class="card"><h3>What changed in my thinking?</h3><p>Reflect on how your judgment developed, which capabilities you strengthened and what you want to improve next.</p><div class="placeholder">Add a 100–150 word reflection and 2–3 professional development goals.</div></div></section>
+<section id="reflection"><div class="kicker">06 · Professional development</div><h2>Reflection & next steps</h2><div class="card"><h3>What changed in my thinking?</h3><p>Reflect on how your judgment developed, which capabilities you strengthened and what you want to improve next.</p><div class="placeholder">### What changed in my thinking?
+
+During this project, I began to understand that digital transformation is not simply about introducing new technologies. It requires understanding the company's business model, stakeholders, financial position, workforce, and risks. Comparing KMG with Shell helped me see that successful practices cannot always be transferred directly between companies. They must be adapted to local conditions and regulations. I also improved my ability to analyse business information, evaluate AI applications, work with financial indicators, and turn research into practical recommendations. I learned that AI-generated information must be checked against reliable sources before being used. In the future, I want to strengthen my analytical, strategic, and communication skills.
+
+ Professional development goals
+
+1. Data analysis:Improve my Excel, Power BI, and financial analysis skills.
+2. Professional knowledge: Develop a stronger understanding of AI governance, cybersecurity, and digital transformation.
+3. Career development: Gain practical experience through internships and prepare for a future career in consulting, particularly at KPMG.</div></div></section>
 </main><footer><div class="wrap"><b>Ayaulym Kenzhebay</b> · DPA-2602 · Astana IT University<br>Business Administration · 2026–2027<br><br>Replace each placeholder with your own assessed artifacts and verified sources. Keep a dated archive of the submitted version.</div></footer>
 <script>
 document.querySelectorAll('.photo-carousel').forEach(carousel => {
