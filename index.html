@@ -6,6 +6,228 @@ html, body {
   max-width: 98%;
   overflow-x: hidden;
 }
+  
+/* =================================
+   ABOUT ME — EDITORIAL PORTFOLIO
+================================= */
+
+#aboutme {
+    padding: 90px 0;
+}
+
+#aboutme .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 42px;
+}
+
+#aboutme .head h2 {
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin: 12px 0 0;
+}
+
+#aboutme .accent-dot {
+    color: #b49a72;
+}
+
+#aboutme .sub {
+    max-width: 350px;
+    line-height: 1.7;
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+/* GRID */
+
+#aboutme .about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* CARDS */
+
+#aboutme .about-card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--card-bg, #f7f5f1);
+    border: 1px solid rgba(120, 110, 95, 0.14);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#aboutme .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+
+#aboutme .intro-photo,
+#aboutme .photo-carousel {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+    background: #e9e5df;
+}
+
+#aboutme .intro-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+}
+
+/* CAROUSEL */
+
+#aboutme .photo-carousel {
+    height: 310px;
+}
+
+#aboutme .carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.45s ease;
+}
+
+#aboutme .carousel-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ARROWS */
+
+#aboutme .carousel-btn {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    background: rgba(20,20,20,0.45);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s ease;
+}
+
+#aboutme .carousel-btn:hover {
+    background: rgba(20,20,20,0.8);
+}
+
+#aboutme .carousel-btn.prev {
+    left: 14px;
+}
+
+#aboutme .carousel-btn.next {
+    right: 14px;
+}
+
+/* DOTS */
+
+#aboutme .carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 7px;
+    z-index: 5;
+}
+
+#aboutme .carousel-dots button {
+    width: 7px;
+    height: 7px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    background: rgba(255,255,255,0.55);
+    cursor: pointer;
+}
+
+#aboutme .carousel-dots button.active {
+    width: 20px;
+    border-radius: 10px;
+    background: white;
+}
+
+/* TEXT CONTENT */
+
+#aboutme .card-content {
+    padding: 25px 27px 30px;
+}
+
+#aboutme .card-number {
+    display: block;
+    margin-bottom: 13px;
+    font-size: 10px;
+    letter-spacing: 1.7px;
+    font-weight: 600;
+    opacity: 0.55;
+}
+
+#aboutme .card-content h3 {
+    font-size: 23px;
+    letter-spacing: -0.5px;
+    margin: 0 0 14px;
+}
+
+#aboutme .card-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.78;
+    margin: 0 0 12px;
+}
+
+#aboutme .card-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    #aboutme {
+        padding: 55px 0;
+    }
+
+    #aboutme .head {
+        display: block;
+        margin-bottom: 28px;
+    }
+
+    #aboutme .sub {
+        margin-top: 14px;
+    }
+
+    #aboutme .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #aboutme .intro-photo,
+    #aboutme .photo-carousel {
+        height: 260px;
+    }
+
+    #aboutme .card-content {
+        padding: 22px;
+    }
+}
 /* COMPANIES SECTION */
 
 .companies-section {
@@ -383,107 +605,143 @@ footer{padding:30px 0 45px;border-top:1px solid var(--line);color:var(--muted);f
       <p>This portfolio connects weekly coursework, attestation assignments and the final business impact recommendation.</p>
     </aside>
   </section>
-<section id="aboutme">
+
+<section id="aboutme" class="about-section">
 
   <div class="head">
     <div>
-      <div class="kicker">01 · Personal profile</div>
-      <h2>About Me</h2>
+      <div class="kicker">01 / PERSONAL PROFILE</div>
+      <h2>About Me<span class="accent-dot">.</span></h2>
     </div>
-    <p class="sub">My background, interests, experiences and activities beyond the classroom.</p>
+    <p class="sub">
+      A little about who I am, what I do, and the experiences
+      that shape me beyond the classroom.
+    </p>
   </div>
 
-  <div class="grid">
+  <div class="about-grid">
 
-    <div class="card">
-      <img src="assets/images/я.jpg"
-           alt="My portrait"
-           width="50%"
-           loading="lazy">
-      <h3>A little about me</h3>
-      <p>
-        My name is Ayaulym Kenzhebay. I am a first year Digital Public Administration
-        student at Astana IT University with interests in business,
-        technology, communication and international development.
-        I enjoy learning new skills, working with people and turning
-        creative ideas into practical projects.
-      </p>
-    </div>
- <div class="card">
-    <div class="photo-carousel">
-    <button class="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
+    <!-- INTRO -->
+    <article class="about-card intro-card">
+      <div class="intro-photo">
+        <img src="assets/images/я.jpg" alt="Ayaulym Kenzhebay">
+      </div>
 
-    <div class="carousel-track">
-        <img src="assets/images/узбечка.jpg"  width="50%"  lenght=50%>
-        <img src="assets/images/IMG_8264.JPEG" width="50%"  lenght=50%>
-        <img src="assets/images/кубок.jpg" width="50%"  lenght=50%>
-        <img src="assets/images/IMG_8249.jpg" width="50%"  lenght=50%>
-    </div>
+      <div class="card-content">
+        <span class="card-number">01 — INTRODUCTION</span>
+        <h3>A little about me</h3>
+        <p>
+          My name is Ayaulym Kenzhebay. I am a first-year Digital
+          Public Administration student at Astana IT University
+          with interests in business, technology, communication
+          and international development.
+        </p>
+        <p>
+          I enjoy learning new skills, working with people and
+          turning creative ideas into practical projects.
+        </p>
+      </div>
+    </article>
 
-    <button class="carousel-btn next" aria-label="Next photo">&#10095;</button>
-
-    <div class="carousel-dots"></div>
-      <h3>Dance & Creativity</h3>
-      <p>
-        Dance has been an important part of my life. I have experience
-        as a choreographer, working with children and helping them
-        develop confidence, coordination and creativity through movement.
-        It taught me discipline, patience and teamwork.
-      </p>
-    </div>
- <div class="card">
+    <!-- DANCE -->
+    <article class="about-card">
       <div class="photo-carousel">
-    <button class="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
+        <button class="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
 
-    <div class="carousel-track">
-        <img src="assets/images/команда.jpg" width="50%"  lenght=50%>
-        <img src="assets/images/IMG_6730.jpg" width="50%"  lenght=50%>
-        <img src="assets/images/dbltj.jpg" width="50%"  lenght=50%>
-        <img src="assets/images/IMG_5457.jpg" width="50%"  lenght=50%>
-    </div>
+        <div class="carousel-track">
+          <img src="assets/images/узбечка.jpg" alt="Dance performance">
+          <img src="assets/images/IMG_8264.JPEG" alt="Dance activity">
+          <img src="assets/images/кубок.jpg" alt="Dance achievement">
+          <img src="assets/images/IMG_8249.jpg" alt="Dance experience">
+        </div>
 
-    <button class="carousel-btn next" aria-label="Next photo">&#10095;</button>
+        <button class="carousel-btn next" aria-label="Next photo">&#10095;</button>
+        <div class="carousel-dots"></div>
+      </div>
 
-    <div class="carousel-dots"></div>
-</div>
-      <h3>Media & Aktown</h3>
-      <p>
-        I worked at Aktown Youth Centre for a year, creating stories,
-        videos and social media content. I filmed and edited videos,
-        managed social media activities and helped promote youth
-        initiatives. Some of my TikTok videos reached 60,000–100,000
-        views organically, without paid promotion.
-      </p>
-    </div>
+      <div class="card-content">
+        <span class="card-number">02 — CREATIVITY</span>
+        <h3>Dance & Creativity</h3>
+        <p>
+          Dance has been an important part of my life. I have
+          experience as a choreographer, working with children
+          and helping them develop confidence, coordination
+          and creativity through movement.
+        </p>
+        <p>
+          It taught me discipline, patience and teamwork.
+        </p>
+      </div>
+    </article>
 
-    <div class="card">
+    <!-- MEDIA -->
+    <article class="about-card">
       <div class="photo-carousel">
-    <button class="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
+        <button class="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
 
-    <div class="carousel-track">
-        <img src="assets/images/ом.jpg" width="50%"  lenght=50%>
-        <img src="assets/images/вода.jpg" width="50%"  lenght=50%>
-        <img src="assets/images/IMG_5674.jpg" width="50%"  lenght=50%>
-        <img src="assets/images/Oceanman.jpg" width="50%"  lenght=50%>
-    </div>
+        <div class="carousel-track">
+          <img src="assets/images/команда.jpg" alt="Aktown team">
+          <img src="assets/images/IMG_6730.jpg" alt="Media work">
+          <img src="assets/images/dbltj.jpg" alt="Youth centre activities">
+          <img src="assets/images/IMG_5457.jpg" alt="Content creation">
+        </div>
 
-    <button class="carousel-btn next" aria-label="Next photo">&#10095;</button>
+        <button class="carousel-btn next" aria-label="Next photo">&#10095;</button>
+        <div class="carousel-dots"></div>
+      </div>
 
-    <div class="carousel-dots"></div>
-</div>
-      <p>
-        I have participated in different volunteer initiatives,
-        including Ocean Man 2025, TURKSOY-related activities and
-        environmental clean-up events. These experiences helped me
-        develop communication skills, responsibility and an
-        understanding of community engagement.
-      </p>
-    </div>
+      <div class="card-content">
+        <span class="card-number">03 — PROFESSIONAL EXPERIENCE</span>
+        <h3>Media & Aktown</h3>
+        <p>
+          I worked at Aktown Youth Centre for a year, creating
+          stories, videos and social media content. I filmed
+          and edited videos, managed social media activities
+          and helped promote youth initiatives.
+        </p>
+        <p>
+          Some of my TikTok videos reached
+          <strong>60,000–100,000 views</strong> organically,
+          without paid promotion.
+        </p>
+      </div>
+    </article>
+
+    <!-- VOLUNTEERING -->
+    <article class="about-card">
+      <div class="photo-carousel">
+        <button class="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
+
+        <div class="carousel-track">
+          <img src="assets/images/ом.jpg" alt="Ocean Man volunteering">
+          <img src="assets/images/вода.jpg" alt="Environmental activities">
+          <img src="assets/images/IMG_5674.jpg" alt="Volunteer experience">
+          <img src="assets/images/Oceanman.jpg" alt="Ocean Man 2025">
+        </div>
+
+        <button class="carousel-btn next" aria-label="Next photo">&#10095;</button>
+        <div class="carousel-dots"></div>
+      </div>
+
+      <div class="card-content">
+        <span class="card-number">04 — COMMUNITY</span>
+        <h3>Volunteering & Community</h3>
+        <p>
+          I have participated in different volunteer initiatives,
+          including Ocean Man 2025, TURKSOY-related activities
+          and environmental clean-up events.
+        </p>
+        <p>
+          These experiences helped me develop communication
+          skills, responsibility and an understanding of
+          community engagement.
+        </p>
+      </div>
+    </article>
 
   </div>
-
 </section>
-  
+
 <section id="companies" class="companies-section">
 
     <div class="section-heading">
@@ -1038,6 +1296,52 @@ document.querySelectorAll('.photo-carousel').forEach(carousel => {
     });
 
     updateCarousel();
+}); 
+
+  document.querySelectorAll('#aboutme .photo-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const images = carousel.querySelectorAll('img');
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+
+    let current = 0;
+
+    images.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `Go to photo ${index + 1}`);
+
+        dot.addEventListener('click', () => {
+            current = index;
+            updateCarousel();
+        });
+
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('button');
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${current * 100}%)`;
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === current);
+        });
+    }
+
+    prev.addEventListener('click', () => {
+        current = (current - 1 + images.length) % images.length;
+        updateCarousel();
+    });
+
+    next.addEventListener('click', () => {
+        current = (current + 1) % images.length;
+        updateCarousel();
+    });
+
+    updateCarousel();
 });
-</script>
+
+</script> 
+
 </body></html>
